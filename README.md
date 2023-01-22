@@ -27,7 +27,7 @@ To deploy a copy of the Dao :
 4. Run dfx generate and npm install
 5. deploy to mainnet
 
-Interface/frontend does not work properly for get_all_proposals or voting. 
+Interface/frontend has issues, but connects to the canister.
 
 Checks the current voting power of every user when a new vote is cast or when checkVotingResult is called. To prevent voting multiple times with same tokens, and to account for changing neuron voting power.
 
