@@ -4,14 +4,15 @@ Interface/svelte provided by bootcamp.
 Motoko/backend written by author.
 
 Features :  
-functional -
+	
 	submit_proposal
 	get_proposal
 	get_all_proposals
 	vote
 	modify_parameters
 
-barely functional -
+barely functional 
+	
 	(createNeuron) - user needs to send the tokens beforehand to account(canister's principal, blob derived from caller's principal)
 	(dissolveNeuron)
 
@@ -25,6 +26,8 @@ To deploy a copy of the Dao :
 	"allowList" in src/webpage/main.mo
 4. Run dfx generate and npm install
 5. deploy to mainnet
+
+Interface/frontend does not work properly for get_all_proposals or voting. 
 
 Checks the current voting power of every user when a new vote is cast or when checkVotingResult is called. To prevent voting multiple times with same tokens, and to account for changing neuron voting power.
 
