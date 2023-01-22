@@ -1,0 +1,38 @@
+type Proposal = 
+ record {
+   id: nat;
+   info: text;
+   minimumVote: float64;
+   passLimit: float64;
+   passed: bool;
+   quadratic: bool;
+   votedAgainst: List;
+   votedFor: List;
+ };
+type List = 
+ opt record {
+       principal;
+       List;
+     };
+service : {
+  checkVotingResult: (int) -> (text);
+  createNeuron: (int) -> (text);
+  dissolveNeuron: () -> (text);
+  get_all_proposals: () -> (vec record {
+                                  int;
+                                  Proposal;
+                                }) query;
+  get_proposal: (int) -> (opt Proposal) query;
+  modify_parameters: (nat, opt float64, opt bool, opt text) -> (text);
+  submit_proposal: (text) -> (variant {
+                                Err: text;
+                                Ok: Proposal;
+                              });
+  vote: (int, bool) -> (variant {
+                          Err: text;
+                          Ok: record {
+                                nat;
+                                nat;
+                              };
+                        });
+}
