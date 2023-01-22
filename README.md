@@ -27,9 +27,15 @@ To deploy a copy of the Dao :
 5. deploy to mainnet
 
 Checks the current voting power of every user when a new vote is cast or when checkVotingResult is called. To prevent voting multiple times with same tokens, and to account for changing neuron voting power.
+
 Voting power is equal to tokens held and user's neuron.
+
 Neurons lock all tokens at the subaccount's address at function call. 
+
 Proposal result checks first for the "passed". Passed proposals stay alive forever and cant be modified, proposals voted to be removed are removed 'forever'.
+
 Function "vote" returns on successful voting needs tuning. 
+
 Gets decimals automatically from token canister for internal use.
+
 Used Tries for databases. All memory is stable.
